@@ -5,6 +5,10 @@ Description: Gabriel theme is basic :)
 Version: 1.0
 */
 
+h1 {
+  text-transform: capitalize;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -23,7 +27,69 @@ nav .menu {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 10px;
+}
+
+nav a {
+  text-decoration: none;
+}
+nav .menu > li {
+  background-color: white;
+  border-radius: 10px;
+}
+nav .menu > li:hover {
+  background-color: orange;
+  transition: 0.5s;
+}
+
+nav .menu > li:hover a {
+  color: white;
+}
+nav .menu {
+  width: 100%;
+}
+
+nav .menu li {
+  padding: 10px;
+}
+nav .menu li a {
+  color: black;
+}
+
+nav .menu li:has(> ul) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  position: relative;
+}
+
+.sub-menu {
+  visibility: hidden;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  list-style: none;
+  padding-left: 0;
+  width: 100%;
+  position: absolute;
+  top: 120%;
+  background-color: orange;
+  border-radius: 5px;
+}
+
+.sub-menu::before {
+  content: "";
+  position: absolute;
+  border-bottom: 8px solid orange;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  margin-top: -8px;
+  margin-left: 20px;
+}
+
+.menu li:has(> ul):hover .sub-menu {
+  visibility: visible;
 }
 
 .header {
@@ -31,6 +97,8 @@ nav .menu {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+  padding: 20px 80px;
 }
 
 h4 {
@@ -43,15 +111,27 @@ h4 {
   grid-template-columns: 1fr 1fr;
   row-gap: 70px;
   column-gap: 50px;
-  background-color: rgb(11, 11, 11);
 }
 
-.content .a .article {
+.content a .preview {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: red;
+  margin-top: 150px;
+}
+
+.content a .preview img {
+  border-radius: 15px;
+}
+
+.content a .preview h4 {
+  font-size: 25px;
+  color: black;
+}
+
+.content a {
+  text-decoration: none;
 }
 
 .posts {
@@ -78,4 +158,51 @@ h4 {
 
 .post-content figure img {
   width: 100%;
+}
+
+.category {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 166, 0, 0.85);
+}
+
+.category h1 {
+  font-size: 50px;
+  color: white;
+}
+
+.category-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  margin: 150px auto;
+  width: 60%;
+}
+
+.category-content a {
+  text-decoration: none;
+}
+
+.category-content a .category-post {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(255, 166, 0, 0.85);
+  width: 90%;
+  height: 350px;
+  border-radius: 10px;
+}
+
+.category-content a .category-post img {
+  border-radius: 15px;
+}
+
+.category-content a .category-post h4 {
+  color: black;
+}
+
+.category-content a .category-post p {
+  color: black;
 }
