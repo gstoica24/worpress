@@ -99,11 +99,19 @@ nav .menu li:has(> ul) {
   flex-direction: column;
   text-align: center;
   padding: 20px 80px;
+  background-color: orange;
+  color: white;
 }
 
-h4 {
+.header h3 {
+  color: black;
+}
+
+.actualite {
   display: flex;
   justify-content: center;
+  font-size: 35px;
+  color: orange;
 }
 
 .content {
@@ -111,23 +119,29 @@ h4 {
   grid-template-columns: 1fr 1fr;
   row-gap: 70px;
   column-gap: 50px;
+  margin: 0px auto;
+  width: 50%;
 }
 
-.content a .preview {
+.content .preview {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-top: 150px;
+}
+.content .preview a img:hover h4 {
+  opacity: 1;
+  transition: 0.5s;
 }
 
-.content a .preview img {
+.content .preview a img {
   border-radius: 15px;
 }
 
-.content a .preview h4 {
+.content .preview h4 {
+  opacity: 0;
   font-size: 25px;
-  color: black;
+  color: orange;
 }
 
 .content a {
@@ -177,7 +191,7 @@ h4 {
   grid-template-columns: 1fr 1fr;
   gap: 70px;
   margin: 150px auto;
-  width: 60%;
+  width: 50%;
 }
 
 .category-content a {
@@ -190,13 +204,16 @@ h4 {
   align-items: center;
   flex-direction: column;
   background-color: rgba(255, 166, 0, 0.85);
-  width: 90%;
-  height: 350px;
-  border-radius: 10px;
+  width: 80%;
+  height: 100%;
+  border-radius: 15px;
 }
 
 .category-content a .category-post img {
+  margin: 10px;
   border-radius: 15px;
+  height: 250px;
+  width: 60%;
 }
 
 .category-content a .category-post h4 {
